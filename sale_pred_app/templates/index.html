@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
+        <title>Seforim Sale Inventory Prediction</title>
+    </head>
+    <body>
+        <div class="visuals">
+            <div>
+                <h1> Seforim Sale Inventory Prediction </h1>
+            </div>
+
+            <div>
+                <img src="{{ url_for('static',filename='YUCSLogo.png') }}">
+            </div>
+            <div>
+                <img src="{{ url_for('static',filename='seforim sale.png') }}">
+            </div>
+
+            <div>
+                <p> built by Eli Perl and Zechariah Rosenthal </p>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="info">
+                <h3>Available Training Data:</h1>
+                <p>{{ train_years }}</p>
+            </div>
+            
+            <div class="main">
+                <h2> Download Predicted Sales Report for {{ target_year }}</h1>
+                <form action="/generate/" method="get">
+                    <button name="generate" type="submit">Generate Report</button>
+                </form>
+            </div>
+
+            <div class="note">
+                <p> *Report generation may take up to 5-10 minutes.</p>
+            </div>
+        </div>
+    </body>
+</html>
+    
